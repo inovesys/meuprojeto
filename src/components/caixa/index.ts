@@ -1,0 +1,1 @@
+export { CaixaDiario } from './CaixaDiario';
