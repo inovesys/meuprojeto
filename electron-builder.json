@@ -1,0 +1,65 @@
+{
+  "appId": "com.inovesys.erp",
+  "productName": "InoveSys ERP",
+  "copyright": "Copyright © 2026 InoveSys",
+  "icon": "public/inovesys_logo_area_util.png",
+  "directories": {
+    "output": "release",
+    "buildResources": "public"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "public/**/*",
+    "!node_modules/**/*",
+    "!.git/**/*",
+    "!src/**/*"
+  ],
+  "extraMetadata": {
+    "main": "dist-electron/main.js"
+  },
+  "fileAssociations": [
+    {
+      "ext": "erp",
+      "name": "InoveSys ERP Data",
+      "role": "Viewer"
+    }
+  ],
+  "win": {
+    "target": [
+      { "target": "portable", "arch": ["x64"] }
+    ],
+    "icon": "public/inovesys_logo_area_util.png",
+    "requestedExecutionLevel": "requireAdministrator"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "allowElevation": true,
+    "installerIcon": "public/inovesys_logo_area_util.png",
+    "uninstallerIcon": "public/inovesys_logo_area_util.png",
+    "installerHeader": "public/inovesys_logo_area_util.png",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "InoveSys ERP",
+    "runAfterFinish": true,
+    "installerLanguages": ["pt_BR"],
+    "language": "1046",
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  },
+  "mac": {
+    "category": "public.app-category.business",
+    "target": ["dmg", "zip"]
+  },
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "category": "Office"
+  },
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "https://inovesys-erp.netlify.app/releases",
+      "channel": "latest"
+    }
+  ]
+}
